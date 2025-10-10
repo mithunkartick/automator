@@ -64,3 +64,24 @@
   }
   
 }
+
+@layer utilities {
+  @keyframes scroll {
+    to { transform: translate(calc(-50% - 0.5rem)); }
+  }
+  .animate-scroll {
+    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  }
+  /* Add other custom animations and classes here */
+}
+
+@theme {
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  /* ...other variables */
+  --container-padding: 2rem;
+  --container-max-2xl: 1400px;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
