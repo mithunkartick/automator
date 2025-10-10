@@ -1,3 +1,4 @@
+import { Sidebar } from 'lucide-react'
 import React from 'react'
 
 const DashboardPage = () => {
