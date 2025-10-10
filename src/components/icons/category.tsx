@@ -41,9 +41,9 @@ function Category({ selected }: Props) {
         height="8"
         rx="3"
         className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
+                  'dark:group-hover:fill-[#c7daff] transition-all dark:fill-[#353346] fill-[#C0BFC4] group-hover:fill-[#7540A9]',
+                  { 'dark:!fill-[#C8C7FF] !fill-[#407aa9] ': selected }
+                )}
       />
       <rect
         x="13"

@@ -29,7 +29,7 @@ const Sidebar = (props: Props) => {
           className="flexu font-bold flex-row "
           href="/"
         >
-          Procrastinot
+          Pro
         </Link>
         <TooltipProvider>
           {menuOptions.map((menuItem) => (

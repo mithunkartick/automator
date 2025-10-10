@@ -37,8 +37,7 @@ const ProfileForm = (props: Props) => {
           </FieldSet>
           <FieldSeparator />
           <Field orientation="horizontal">
-            <Button type="submit">Submit</Button>
-            <Button variant="default" type="button">
+            <Button variant="default" type="submit" className='self-start text-white bg-blue-500/70 hover:bg-blue-500'>
               Submit
             </Button>
           </Field>

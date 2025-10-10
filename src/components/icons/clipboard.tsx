@@ -17,9 +17,9 @@ const Logs = ({ selected }: { selected: boolean }) => {
         height="19"
         rx="3"
         className={clsx(
-          'dark:group-hover:fill-[#C8C7FF] transition-all dark:fill-[#353346] fill-[#BABABB] group-hover:fill-[#7540A9]',
-          { 'dark:!fill-[#C8C7FF] fill-[#7540A9] ': selected }
-        )}
+                  'dark:group-hover:fill-[#c7daff] transition-all dark:fill-[#353346] fill-[#C0BFC4] group-hover:fill-[#7540A9]',
+                  { 'dark:!fill-[#C8C7FF] !fill-[#407aa9] ': selected }
+                )}
       />
       <path
         d="M14 3C14 1.89543 13.1046 1 12 1C10.8954 1 10 1.89543 10 3H8V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3H14Z"
