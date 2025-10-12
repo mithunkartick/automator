@@ -29,7 +29,7 @@ export function GeminiEff() {
           pathLengthFourth,
           pathLengthFifth,
         ]}
-        title='Get Started with Procrastinot'
+        title='Get Started with Flowly'
         description="Scroll down to see what Procrastinot can do."
       />
     </div>
