@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Flowly
 
-First, run the development server:
+Ever felt like you were wasting more time than required on merely simple tasks? Flowly's got you covered.
+
+Flowly simplifies workflows, making it easy to integrate automation into your daily lifestyle.
+
+# Setup
+
+
+
+## Dependencies
+
+Install my-project with npm
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup Clerk, Prisma and NeonTech
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create an account and add an SSO for Google in Clerk Authentication
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Setup Prisma and NeonTech
 
-## Learn More
+Add the publishable keys to the .env file.
 
-To learn more about Next.js, take a look at the following resources:
+## Add Google Scopes for OAuth and Drive API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Go to console.cloud.google.com and enable Google Drive API and add scopes for basic info and Google Drive API.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## IMPORTANT: Use TailwindCSS v3
 
-## Deploy on Vercel
+Due to my familiarity with v3 over v4, I have used TailwindCSS v3 in this project. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Setup ngrok
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add ngrok hostname in the provisioned placeholder in .env file after creating an account with ngrok
+
+Run the following command
+    
+    ngrok http https://localhost:3000
+
+## Experimental HTTPS
+
+Make sure to use HTTPS over HTTP when accessing or referring to the localhost domain, since the package.json contains the '--experimental-https' tag.
+
+## Voila!
+
+    npm run dev
+
+The project will be now live at https://localhost:3000. 
+
+If there are any more questions, contact us at teamprocrastinot@gmail.com.
+
+# Team Procrastinot
+
+Huthaifa K (huthaifa@hre.iitr.ac.in)
+
+Krrish Dhamodharan (krrish_d@ee.iitr.ac.in)
+
+Mithun Kartick B (mithun_kb@ph.iitr.ac.in)
+
+Vrishin M (vrishin_m@ch.iitr.ac.in)
+
+
+
+    
