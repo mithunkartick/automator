@@ -58,63 +58,25 @@ export const onCreateNodeTemplate = async (
     }
   }
   if (type === 'Slack') {
+    // First clear existing channels
+    await db.workflows.update({
+      where: { id: workflowId },
+      data: { slackChannels: [] }
+    })
+
+    // Then update template, token, and new channels in one operation
     const response = await db.workflows.update({
-      where: {
-        id: workflowId,
-      },
+      where: { id: workflowId },
       data: {
         slackTemplate: content,
         slackAccessToken: accessToken,
+        slackChannels: channels?.length 
+          ? { set: channels.map(ch => ch.value) }
+          : { set: [] }
       },
     })
 
     if (response) {
-      const channelList = await db.workflows.findUnique({
-        where: {
-          id: workflowId,
-        },
-        select: {
-          slackChannels: true,
-        },
-      })
-
-      if (channelList) {
-        //remove duplicates before insert
-        const NonDuplicated = channelList.slackChannels.filter(
-          (channel) => channel !== channels![0].value
-        )
-
-        NonDuplicated!
-          .map((channel) => channel)
-          .forEach(async (channel) => {
-            await db.workflows.update({
-              where: {
-                id: workflowId,
-              },
-              data: {
-                slackChannels: {
-                  push: channel,
-                },
-              },
-            })
-          })
-
-        return 'Slack template saved'
-      }
-      channels!
-        .map((channel) => channel.value)
-        .forEach(async (channel) => {
-          await db.workflows.update({
-            where: {
-              id: workflowId,
-            },
-            data: {
-              slackChannels: {
-                push: channel,
-              },
-            },
-          })
-        })
       return 'Slack template saved'
     }
   }
@@ -152,6 +114,7 @@ export const onCreateWorkflow = async (name: string, description: string) => {
   const user = await currentUser()
 
   if (user) {
+    console.log('user check')
     //create new workflow
     const workflow = await db.workflows.create({
       data: {
@@ -160,8 +123,11 @@ export const onCreateWorkflow = async (name: string, description: string) => {
         description,
       },
     })
+    console.log(workflow)
 
-    if (workflow) return { message: 'workflow created' }
+    if (workflow) {
+      console.log('workflow created')
+      return { message: 'workflow created' }} 
     return { message: 'Oops! try again' }
   }
 }

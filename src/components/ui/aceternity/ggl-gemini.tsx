@@ -18,7 +18,7 @@ export function GeminiEff() {
 
   return (
     <div
-      className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+      className="h-[200vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-20 overflow-clip"
       ref={ref}
     >
       <GoogleGeminiEffect
@@ -30,7 +30,7 @@ export function GeminiEff() {
           pathLengthFifth,
         ]}
         title='Get Started with Procrastinot'
-        description="Stop wasting time working with recurrent workflows. Automate your life with ease now."
+        description="Scroll down to see what Procrastinot can do."
       />
     </div>
   );

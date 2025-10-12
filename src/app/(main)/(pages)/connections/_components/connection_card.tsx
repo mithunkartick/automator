@@ -1,9 +1,13 @@
-"use client";
-import { BackgroundGradient } from '@/components/ui/background-gradient'
-import { Card, CardTitle, CardHeader } from '@/components/ui/card';
 import { ConnectionTypes } from '@/lib/types'
-import Link from 'next/link';
 import React from 'react'
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import Image from 'next/image'
+import Link from 'next/link'
 
 type Props = {
   type: ConnectionTypes
@@ -11,7 +15,7 @@ type Props = {
   title: ConnectionTypes
   description: string
   callback?: () => void
-  //connected: {} & any
+  connected: {} & any
 }
 
 const ConnectionCard = ({
@@ -19,35 +23,31 @@ const ConnectionCard = ({
   type,
   icon,
   title,
-  //connected,
+  connected,
 }: Props) => {
   return (
-    <div>
-        <BackgroundGradient className="rounded-[22px] w-full py-4 justify-between sm:p-5 bg-white dark:bg-zinc-900">
-        <CardHeader className='flex flex-col gap-2 py-4'>
-            <div className='flex flex-row gap-2'>
-                <img
-          src={icon}
-          alt="{title}"
-          height="40"
-          width="40"
-          className="object-contain"
-        />
-            </div>
-        {/* <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
-          {title}
-        </p> */}
-        <div className='margin-t-4'>
-            <CardTitle className="text-black dark:text-white text-lg sm:text-2xl font-bold">{title}</CardTitle>
-            <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-1">{description}</p>
+    <Card className="flex flex-row justify-between">
+      <CardHeader className="flex flex-col gap-4">
+        <div className="flex flex-row gap-2">
+          <Image
+            src={icon}
+            alt={title}
+            height={30}
+            width={30}
+            className="object-contain"
+          />
         </div>
-        </CardHeader>
-        <div className="flex flex-col items-center gap-2">
-        {/* {connected[type] ? (
+        <div>
+          <CardTitle className="text-lg">{title}</CardTitle>
+          <CardDescription>{description}</CardDescription>
+        </div>
+      </CardHeader>
+      <div className="flex flex-col items-center gap-2 p-4">
+        {connected[type] ? (
           <div className="border-bg-primary rounded-lg border-2 px-3 py-2 font-bold text-white">
             Connected
           </div>
-        ) : ( */}
+        ) : (
           <Link
             href={
               title == 'Discord'
@@ -58,18 +58,13 @@ const ConnectionCard = ({
                 ? process.env.NEXT_PUBLIC_SLACK_REDIRECT!
                 : '#'
             }
-            className=" rounded-lg bg-blue-500/70 px-4 py-2 font-bold text-white hover:bg-blue-500"
+            className=" rounded-lg bg-primary p-2 font-bold text-primary-foreground"
           >
             Connect
           </Link>
-    
+        )}
       </div>
-        
-        {/* <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-          
-        </button> */}
-      </BackgroundGradient>
-    </div>
+    </Card>
   )
 }
 

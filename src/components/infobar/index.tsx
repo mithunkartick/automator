@@ -64,7 +64,7 @@ const InfoBar = (props: Props) => {
                 </TooltipTrigger>
                 <TooltipContent
                   side="bottom"
-                  className="bg-black/10 backdrop-blur-xl"
+                  className="bg-black/10 backdrop-blur-xl text-white"
                 >
                   <p>{menuItem.name}</p>
                 </TooltipContent>
