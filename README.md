@@ -57,11 +57,11 @@ If there are any more questions, contact us at teamprocrastinot@gmail.com.
 
 Mithun Kartick B (mithun_kb@ph.iitr.ac.in)
 
+Vrishin M (vrishin_m@ch.iitr.ac.in)
+
 Huthaifa K (huthaifa@hre.iitr.ac.in)
 
 Krrish Dhamodharan (krrish_d@ee.iitr.ac.in)
-
-Vrishin M (vrishin_m@ch.iitr.ac.in)
 
 
 
