@@ -2,8 +2,9 @@
 # Flowly
 
 Ever felt like you were wasting more time than required on merely simple tasks? Flowly's got you covered.
-
 Flowly simplifies workflows, making it easy to integrate automation into your daily lifestyle.
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ZJRh2d00W8A/0.jpg)](https://www.youtube.com/watch?v=ZJRh2d00W8A) 
 
 # Setup
 
